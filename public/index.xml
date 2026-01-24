@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Perry Ma&#39;s Blog</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content on Perry Ma&#39;s Blog</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Jan 2024 14:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World - 我的第一篇博客</title>
+      <link>http://localhost:1313/blog/posts/hello-world/</link>
+      <pubDate>Wed, 24 Jan 2024 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/posts/hello-world/</guid>
+      <description>欢迎来到我的博客，这是第一篇文章</description>
+    </item>
+    <item>
+      <title>关于我</title>
+      <link>http://localhost:1313/blog/about/</link>
+      <pubDate>Wed, 24 Jan 2024 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/about/</guid>
+      <description>&lt;h1 id=&#34;关于-perry-ma&#34;&gt;关于 Perry Ma&lt;/h1&gt;
+&lt;p&gt;👋 你好！我是 Perry Ma&lt;/p&gt;
+&lt;h2 id=&#34;我是谁&#34;&gt;我是谁&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🤖 币安量化交易员&lt;/li&gt;
+&lt;li&gt;💎 Web3爱好者&lt;/li&gt;
+&lt;li&gt;💻 技术探索者&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;技能&#34;&gt;技能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;量化交易策略开发&lt;/li&gt;
+&lt;li&gt;区块链技术&lt;/li&gt;
+&lt;li&gt;前端开发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;联系方式&#34;&gt;联系方式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/mapenghui11&#34;&gt;我的GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:mapenghui11@gmail.com&#34;&gt;mapenghui11@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;这个博客&#34;&gt;这个博客&lt;/h2&gt;
+&lt;p&gt;这个博客使用Hugo搭建，部署在自己的服务器上，使用区块链域名。&lt;/p&gt;
+&lt;p&gt;欢迎交流！&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

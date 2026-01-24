@@ -1,0 +1,68 @@
+baseURL = "http://129.150.38.90/blog/"
+languageCode = "zh-cn"
+title = "Perry Ma's Blog"
+theme = "PaperMod"
+
+# 启用分类和标签
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[params]
+  description = "量化交易员的技术博客"
+  author = "Perry Ma"
+  
+  # 显示阅读时间
+  showReadingTime = true
+  
+  # 显示分类和标签
+  showTaxonomy = true
+  
+  # 显示代码复制按钮
+  showCodeCopyButtons = true
+  
+  # 首页信息
+  [params.homeInfoParams]
+    Title = "欢迎来到 Perry Ma 的博客"
+    Content = "量化交易 | 技术分享 | Web3"
+
+  # 社交链接（可选，可以改成你的GitHub）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/mapenghui11"
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 4
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 5
+
+# 输出格式（支持搜索）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 代码高亮
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+
