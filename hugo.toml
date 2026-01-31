@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "zh-cn"
-title = "Perry Ma's Blog"
+title = "PerryMa's Blog"
 theme = "PaperMod"
 
 # 关键：使用相对URL
@@ -15,7 +15,7 @@ canonifyURLs = false
 
 [params]
   description = "量化交易员的技术博客"
-  author = "Perry Ma"
+  author = "PerryMa"
   
   # 显示阅读时间
   showReadingTime = true
@@ -28,7 +28,7 @@ canonifyURLs = false
   
   # 首页信息
   [params.homeInfoParams]
-    Title = "欢迎来到 Perry Ma 的博客"
+    Title = "欢迎来到 PerryMa 的博客"
     Content = "量化交易 | 技术分享 | Web3"
 
   # 社交链接（可选，可以改成你的GitHub）
