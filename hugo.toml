@@ -3,6 +3,10 @@ languageCode = "zh-cn"
 title = "Perry Ma's Blog"
 theme = "PaperMod"
 
+# 关键：使用相对URL
+relativeURLs = true
+canonifyURLs = false
+
 # 启用分类和标签
 [taxonomies]
   category = "categories"
