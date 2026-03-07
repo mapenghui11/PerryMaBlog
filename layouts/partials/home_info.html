@@ -1,0 +1,38 @@
+{{- with site.Params.homeInfoParams }}
+{{- $postCount := len (where site.RegularPages "Section" "posts") -}}
+{{- $tagCount := len site.Taxonomies.tags -}}
+{{- $categoryCount := len site.Taxonomies.categories -}}
+<article class="first-entry home-info home-signal">
+    <span class="signal-orb signal-orb-a"></span>
+    <span class="signal-orb signal-orb-b"></span>
+    <div class="signal-grid">
+        <div class="signal-copy">
+            <p class="signal-kicker">PERRYMA // SIGNAL DESK</p>
+            <header class="entry-header">
+                <h1>{{ .Title | markdownify }}</h1>
+            </header>
+            <div class="entry-content signal-lede">
+                {{ .Content | markdownify }}
+            </div>
+            <div class="signal-tags">
+                <span>Quant Strategy</span>
+                <span>Web3 Infra</span>
+                <span>System Thinking</span>
+            </div>
+            <footer class="entry-footer">
+                {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+            </footer>
+        </div>
+        <aside class="signal-panel" aria-label="Blog Snapshot">
+            <p class="panel-title">Live Snapshot</p>
+            <p class="panel-date">{{ now.Format "2006-01-02" }}</p>
+            <ul class="panel-metrics">
+                <li><span>Posts</span><strong>{{ $postCount }}</strong></li>
+                <li><span>Tags</span><strong>{{ $tagCount }}</strong></li>
+                <li><span>Categories</span><strong>{{ $categoryCount }}</strong></li>
+            </ul>
+            <a class="signal-cta" href="{{ "/posts/" | relURL }}">Open Research Feed</a>
+        </aside>
+    </div>
+</article>
+{{- end -}}
