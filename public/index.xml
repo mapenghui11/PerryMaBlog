@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Perry Ma&#39;s Blog</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content on Perry Ma&#39;s Blog</description>
+    <title>PerryMa&#39;s Blog</title>
+    <link>/</link>
+    <description>Recent content on PerryMa&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 24 Jan 2024 14:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jan 2024 15:00:00 +0800</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试自动部署</title>
+      <link>/posts/test-deploy/</link>
+      <pubDate>Wed, 24 Jan 2024 15:00:00 +0800</pubDate>
+      <guid>/posts/test-deploy/</guid>
+      <description>&lt;h1 id=&#34;测试自动部署&#34;&gt;测试自动部署&lt;/h1&gt;
+&lt;p&gt;这是第二篇文章，用来测试自动部署功能。&lt;/p&gt;
+&lt;p&gt;如果你能在网站上看到这篇文章，说明自动部署成功了！&lt;/p&gt;
+&lt;h2 id=&#34;工作流程&#34;&gt;工作流程&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;本地写文章&lt;/li&gt;
+&lt;li&gt;Git提交&lt;/li&gt;
+&lt;li&gt;推送到GitHub&lt;/li&gt;
+&lt;li&gt;服务器拉取更新&lt;/li&gt;
+&lt;li&gt;自动构建发布&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>Hello World - 我的第一篇博客</title>
-      <link>http://localhost:1313/blog/posts/hello-world/</link>
+      <link>/posts/hello-world/</link>
       <pubDate>Wed, 24 Jan 2024 14:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/posts/hello-world/</guid>
+      <guid>/posts/hello-world/</guid>
       <description>欢迎来到我的博客，这是第一篇文章</description>
     </item>
     <item>
       <title>关于我</title>
-      <link>http://localhost:1313/blog/about/</link>
+      <link>/about/</link>
       <pubDate>Wed, 24 Jan 2024 14:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/blog/about/</guid>
+      <guid>/about/</guid>
       <description>&lt;h1 id=&#34;关于-perry-ma&#34;&gt;关于 Perry Ma&lt;/h1&gt;
 &lt;p&gt;👋 你好！我是 Perry Ma&lt;/p&gt;
 &lt;h2 id=&#34;我是谁&#34;&gt;我是谁&lt;/h2&gt;
