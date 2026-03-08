@@ -1,34 +1,13 @@
 {{- with site.Params.homeInfoParams }}
-{{- $postCount := len (where site.RegularPages "Section" "posts") -}}
-{{- $tagCount := len site.Taxonomies.tags -}}
-{{- $categoryCount := len site.Taxonomies.categories -}}
-<article class="first-entry home-info journal-hero">
-    <div class="journal-head">
-        <p class="journal-edition">Vol.{{ now.Format "2006" }} · Issue {{ now.Format "01" }}</p>
-        <p class="journal-date">{{ now.Format "January 02, 2006" }}</p>
+<article class="first-entry home-info journal-masthead">
+    <div class="journal-masthead-line"></div>
+    <div class="journal-mark">◈</div>
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content journal-subtitle">
+        {{ .Content | markdownify }}
     </div>
-    <div class="journal-grid">
-        <div class="journal-copy">
-            <p class="journal-kicker">PerryMa Journal of Quantitative Systems</p>
-            <header class="entry-header">
-                <h1>{{ .Title | markdownify }}</h1>
-            </header>
-            <div class="entry-content journal-lede">
-                {{ .Content | markdownify }}
-            </div>
-            <footer class="entry-footer">
-                {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
-            </footer>
-        </div>
-        <aside class="journal-panel" aria-label="Journal Snapshot">
-            <p class="panel-title">Editorial Ledger</p>
-            <ul class="panel-metrics">
-                <li><span>Articles Published</span><strong>{{ $postCount }}</strong></li>
-                <li><span>Research Topics</span><strong>{{ $tagCount }}</strong></li>
-                <li><span>Sections</span><strong>{{ $categoryCount }}</strong></li>
-            </ul>
-            <a class="journal-cta" href="{{ "/posts/" | relURL }}">Read Current Issue</a>
-        </aside>
-    </div>
+    <div class="journal-masthead-line"></div>
 </article>
 {{- end -}}

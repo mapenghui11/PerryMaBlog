@@ -1,0 +1,115 @@
+{{- define "main" }}
+
+{{- if (and site.Params.profileMode.enabled .IsHome) }}
+{{- partial "index_profile.html" . }}
+{{- else }}
+
+{{- if not .IsHome | and .Title }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description | markdownify }}</div>
+  {{- end }}
+</header>
+{{- end }}
+
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
+{{- end }}
+
+{{- $pages := union .RegularPages .Sections }}
+{{- if .IsHome }}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
+{{- end }}
+{{- $paginator := .Paginate $pages }}
+
+{{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
+{{- partial "home_info.html" . }}
+{{- end }}
+
+{{- if and .IsHome (eq $paginator.PageNumber 1) (gt (len $paginator.Pages) 0) }}
+{{- $featured := index $paginator.Pages 0 }}
+{{- $latest := first 4 (after 1 $paginator.Pages) }}
+<section class="journal-front">
+  <div class="journal-front-main">
+    <header class="journal-section-head">
+      <h2>EDITORIAL / 社论</h2>
+      <span>VOL {{ now.Format "1" }}. ISSUE {{ now.Format "01" }}</span>
+    </header>
+    <article class="journal-feature">
+      {{- with $featured.Params.cover.image }}
+      <a class="feature-media" href="{{ $featured.RelPermalink }}">
+        <img src="{{ . | absURL }}" alt="{{ $featured.Title }}">
+      </a>
+      {{- else }}
+      <a class="feature-media feature-media-placeholder" href="{{ $featured.RelPermalink }}">
+        <span>FEATURED ESSAY</span>
+      </a>
+      {{- end }}
+      <div class="feature-copy">
+        <h3><a href="{{ $featured.RelPermalink }}">{{ $featured.Title }}</a></h3>
+        <p>{{ $featured.Summary | plainify | htmlUnescape }}{{ if $featured.Truncated }}...{{ end }}</p>
+      </div>
+    </article>
+  </div>
+  <aside class="journal-front-side">
+    <header class="journal-section-head">
+      <h2>LATEST NEWS / 最新动态</h2>
+    </header>
+    <div class="news-list">
+      {{- range $latest }}
+      <article class="news-item">
+        <time>{{ .Date.Format "02 Jan 2006" }}</time>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      </article>
+      {{- end }}
+    </div>
+  </aside>
+</section>
+{{- end }}
+
+{{- $term := .Data.Term }}
+{{- range $index, $page := $paginator.Pages }}
+{{- if not (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
+{{- $class := "post-entry" }}
+{{- if $term }}
+{{- $class = "post-entry tag-entry" }}
+{{- end }}
+<article class="{{ $class }}">
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">{{ .Title }}</h2>
+  </header>
+  {{- if (ne (.Param "hideSummary") true) }}
+  <div class="entry-content">
+    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+  </div>
+  {{- end }}
+  {{- if not (.Param "hideMeta") }}
+  <footer class="entry-footer">{{- partial "post_meta.html" . -}}</footer>
+  {{- end }}
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
+{{- end }}
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">«&nbsp;{{ i18n "prev_page" }}</a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">{{ i18n "next_page" }}&nbsp;»</a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- end }}
+{{- end }}
