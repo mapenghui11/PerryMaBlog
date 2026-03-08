@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on PerryMa&#39;s Blog</title>
-    <link>/posts/</link>
+    <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on PerryMa&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 24 Jan 2024 15:00:00 +0800</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>测试自动部署</title>
-      <link>/posts/test-deploy/</link>
+      <link>//localhost:1313/posts/test-deploy/</link>
       <pubDate>Wed, 24 Jan 2024 15:00:00 +0800</pubDate>
-      <guid>/posts/test-deploy/</guid>
+      <guid>//localhost:1313/posts/test-deploy/</guid>
       <description>&lt;h1 id=&#34;测试自动部署&#34;&gt;测试自动部署&lt;/h1&gt;
 &lt;p&gt;这是第二篇文章，用来测试自动部署功能。&lt;/p&gt;
 &lt;p&gt;如果你能在网站上看到这篇文章，说明自动部署成功了！&lt;/p&gt;
@@ -27,9 +27,9 @@
     </item>
     <item>
       <title>Hello World - 我的第一篇博客</title>
-      <link>/posts/hello-world/</link>
+      <link>//localhost:1313/posts/hello-world/</link>
       <pubDate>Wed, 24 Jan 2024 14:00:00 +0800</pubDate>
-      <guid>/posts/hello-world/</guid>
+      <guid>//localhost:1313/posts/hello-world/</guid>
       <description>欢迎来到我的博客，这是第一篇文章</description>
     </item>
   </channel>

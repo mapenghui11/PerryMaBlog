@@ -1,20 +1,21 @@
 :root {
-  --theme: #efefef;
-  --entry: #f7f7f7;
-  --primary: #252525;
-  --secondary: #666;
+  --theme: #ececeb;
+  --entry: #f3f3f1;
+  --primary: #2b2b2b;
+  --secondary: #727272;
   --content: #2f2f2f;
-  --border: #d7d7d7;
-  --gold: #b18e3c;
-  --accent: #d03a31;
+  --line: #d0d0ce;
+  --ink: #121212;
+  --gold: #b99544;
+  --red: #cf3b34;
 }
 
 .dark {
   --theme: #efefef;
-  --entry: #f7f7f7;
-  --primary: #252525;
-  --secondary: #666;
-  --content: #2f2f2f;
+  --entry: #f4f4f2;
+  --primary: #2c2c2c;
+  --secondary: #707070;
+  --content: #303030;
 }
 
 body {
@@ -25,78 +26,170 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Cormorant Garamond", "Noto Serif SC", serif;
-  letter-spacing: 0.01em;
+  color: #2b2b2b;
 }
 
 .main {
-  max-width: 1200px;
+  max-width: 1160px;
+}
+
+.journal-shell {
+  width: min(1160px, calc(100% - 2rem));
+  margin: 0 auto;
 }
 
 .header {
-  background: #050505;
-  border-bottom: 1px solid #1e1e1e;
+  background: #f3f3f3;
+  border-bottom: 1px solid var(--line);
 }
 
-.nav {
-  min-height: 72px;
+.journal-nav-main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 112px;
+  gap: 1rem;
 }
 
-.logo a {
-  color: #fff;
-  font-size: 2rem;
-  font-family: "Cormorant Garamond", serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.nav a {
-  color: #f2f2f2;
+.journal-menu-btn {
+  justify-self: start;
+  background: transparent;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #252525;
   font-family: "IBM Plex Sans", "Noto Sans SC", sans-serif;
-  font-size: 0.84rem;
-  letter-spacing: 0.08em;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.nav a:hover,
-.active {
-  color: #fff;
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 6px;
+.journal-menu-btn span:first-child {
+  font-size: 1.35rem;
+}
+
+.journal-brand {
+  justify-self: center;
+}
+
+.journal-brand a {
+  text-decoration: none;
+  color: #282828;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.brand-word {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 4.4vw, 4.9rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+}
+
+.journal-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.journal-search {
+  color: #1f1f1f;
+  display: inline-flex;
+}
+
+.journal-theme-btn {
+  border: 1px solid #bdbdbd;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #2f2f2f;
+}
+
+.journal-tabs-wrap {
+  border-top: 2px solid #272727;
+  border-bottom: 1px solid #c7c7c7;
+  background: #e3e3e3;
+}
+
+.journal-tabs {
+  margin: 0;
+  padding: 0.34rem 0 0.36rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.journal-tabs li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.journal-tabs li + li::before {
+  content: "";
+  width: 1px;
+  height: 0.82rem;
+  margin: 0 0.62rem;
+  background: #bcbcbc;
+}
+
+.journal-tabs li a {
+  text-decoration: none;
+  color: #5d5d5d;
+  font-family: "IBM Plex Sans", "Noto Sans SC", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.journal-tabs li a.is-active,
+.journal-tabs li a:hover {
+  color: #393939;
+  font-weight: 500;
 }
 
 .journal-masthead {
-  margin: 1.15rem auto 2rem;
-  padding: 1.1rem 0 1.4rem;
-  background: transparent;
+  margin: 0.9rem auto 1.35rem;
   border: 0;
   box-shadow: none;
+  background: transparent;
   text-align: center;
 }
 
 .journal-masthead-line {
-  height: 1px;
-  background: var(--border);
+  width: min(90%, 980px);
   margin: 0 auto;
-  width: min(86%, 980px);
+  height: 1px;
+  background: var(--line);
 }
 
 .journal-mark {
-  margin: 0.65rem 0 0.2rem;
-  color: #d7ae34;
-  font-size: 1.2rem;
+  margin: 0.6rem 0 0.1rem;
+  color: #c5a03e;
+  font-size: 1.05rem;
 }
 
 .journal-masthead .entry-header h1 {
-  margin: 0.15rem 0 0;
-  font-size: clamp(2.2rem, 4.2vw, 4.3rem);
+  margin: 0.1rem 0 0;
+  font-family: "Noto Serif SC", "Source Serif 4", serif;
+  font-size: clamp(1.75rem, 2.9vw, 3rem);
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .journal-subtitle {
-  margin-top: 0.35rem;
-  font-size: 1.75rem;
-  color: #575757;
+  margin-top: 0.45rem;
+  font-size: 1.02rem;
+  color: #646464;
 }
 
 .journal-subtitle p {
@@ -105,44 +198,45 @@ h1, h2, h3, h4, h5, h6 {
 
 .journal-front {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
-  gap: 2rem;
-  padding: 1rem 0 0.7rem;
+  grid-template-columns: 1.95fr 1fr;
+  gap: 1.4rem;
 }
 
 .journal-section-head {
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 0.85rem;
-  border-bottom: 4px solid #262626;
-  padding-bottom: 0.45rem;
+  align-items: flex-end;
+  border-bottom: 3px solid #2f2f2f;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
 }
 
 .journal-section-head h2 {
   margin: 0;
-  font-size: clamp(1.8rem, 2.6vw, 3rem);
+  font-size: clamp(1.2rem, 1.55vw, 1.95rem);
   text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-family: "Source Serif 4", "Noto Serif SC", serif;
 }
 
 .journal-section-head span {
-  color: #949494;
+  color: #8e8e8e;
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.74rem;
-  letter-spacing: 0.11em;
+  font-size: 0.73rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .journal-feature {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr 1.14fr;
+  gap: 0.9rem;
 }
 
 .feature-media {
+  min-height: 285px;
+  background: #202020;
   display: block;
-  min-height: 310px;
-  background: #1f1f1f;
 }
 
 .feature-media img {
@@ -155,9 +249,8 @@ h1, h2, h3, h4, h5, h6 {
 .feature-media-placeholder {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
   padding: 1rem;
-  background: repeating-linear-gradient(-16deg, #111, #111 12px, #343434 12px, #343434 24px);
+  background: repeating-linear-gradient(-16deg, #111, #111 12px, #393939 12px, #393939 24px);
 }
 
 .feature-media-placeholder span {
@@ -165,126 +258,137 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 0.74rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .feature-copy h3 {
   margin: 0;
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  line-height: 1.02;
+  font-family: "Noto Serif SC", "Source Serif 4", serif;
+  font-size: clamp(1.65rem, 2.2vw, 2.5rem);
+  line-height: 1.18;
 }
 
 .feature-copy h3 a {
-  color: var(--gold);
+  color: #2b2b2b;
 }
 
 .feature-copy p {
-  margin-top: 0.8rem;
-  font-size: 1.33rem;
-  line-height: 1.6;
+  margin-top: 0.65rem;
+  font-size: 0.98rem;
+  line-height: 1.66;
 }
 
 .journal-front-side {
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--line);
   padding-left: 1.1rem;
-}
-
-.journal-front-side .journal-section-head h2 {
-  font-size: clamp(1.45rem, 1.7vw, 2rem);
 }
 
 .journal-front-side .journal-section-head {
   border-bottom-width: 3px;
 }
 
+.journal-front-side .journal-section-head h2 {
+  font-size: clamp(1.1rem, 1.35vw, 1.45rem);
+}
+
 .news-item {
-  padding: 0.4rem 0 0.9rem;
+  padding: 0.45rem 0 0.95rem;
 }
 
 .news-item time {
+  color: var(--red);
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.72rem;
-  color: var(--accent);
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .news-item h3 {
   margin: 0.2rem 0 0;
-  font-size: 2rem;
-  line-height: 1.2;
+  font-family: "Noto Serif SC", "Source Serif 4", serif;
+  font-size: 0.95rem;
+  line-height: 1.32;
 }
 
 .news-item h3 a {
-  color: #262626;
+  color: #292929;
 }
 
 .post-entry {
-  margin-top: 0.9rem;
-  border: 1px solid var(--border);
+  margin-top: 0.95rem;
+  border: 1px solid var(--line);
   border-radius: 0;
   background: var(--entry);
   box-shadow: none;
-  transition: background-color 0.2s ease;
-}
-
-.post-entry:hover {
-  background: #fcfcfc;
 }
 
 .entry-header h2 {
-  font-size: 2rem;
+  font-family: "Noto Serif SC", "Source Serif 4", serif;
+  font-size: 1.7rem;
 }
 
 .entry-content {
-  color: #434343;
-  font-size: 1.05rem;
+  color: #444;
+  font-size: 1.04rem;
 }
 
 .entry-footer,
 .post-meta {
+  color: #767676;
   font-family: "IBM Plex Sans", sans-serif;
-  color: #737373;
-}
-
-.pagination a {
-  border-radius: 0;
-  border-color: var(--border);
 }
 
 .footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
+  .journal-nav-main {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .journal-menu-btn,
+  .journal-brand,
+  .journal-actions {
+    justify-self: center;
+  }
+
   .journal-front {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1.25rem;
   }
 
   .journal-front-side {
     border-left: 0;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--line);
     padding-left: 0;
     padding-top: 1rem;
   }
 }
 
-@media (max-width: 720px) {
-  .logo a {
-    font-size: 1.35rem;
+@media (max-width: 760px) {
+  .journal-actions {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .journal-subtitle {
-    font-size: 1.2rem;
+  .brand-word {
+    font-size: 2.5rem;
+  }
+
+  .journal-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
 
   .journal-feature {
     grid-template-columns: 1fr;
   }
 
-  .feature-copy h3,
-  .news-item h3,
-  .entry-header h2 {
-    font-size: 1.9rem;
+  .journal-subtitle {
+    font-size: 1.2rem;
   }
 }

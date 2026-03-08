@@ -1,0 +1,51 @@
+<header class="header journal-header">
+    <div class="journal-shell journal-nav-main">
+        <button class="journal-menu-btn" aria-label="Open menu">
+            <span>☰</span>
+            <span>MENU / 菜单</span>
+        </button>
+
+        <div class="journal-brand">
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ site.Title }}">
+                <span class="brand-word">PERRYMA</span>
+            </a>
+        </div>
+
+        <div class="journal-actions">
+            <a class="journal-search" href="{{ "/search/" | relURL }}" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+                </svg>
+            </a>
+            <button id="theme-toggle" class="journal-theme-btn" aria-label="Toggle theme">
+                ◐
+            </button>
+        </div>
+    </div>
+
+    {{- $currentPage := . }}
+    {{- $tabLabels := dict
+        "首页" "HOME / 主页"
+        "文章" "NEWS / 新闻"
+        "分类" "CATEGORIES / 分类"
+        "标签" "TOPICS / 标签"
+        "关于" "ABOUT / 关于"
+    -}}
+    <div class="journal-tabs-wrap">
+        <div class="journal-shell">
+            <ul id="menu" class="journal-tabs">
+                {{- range site.Menus.main }}
+                {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+                {{- $page_url:= $currentPage.Permalink | absLangURL }}
+                {{- $label := index $tabLabels .Name | default .Name }}
+                <li>
+                    <a href="{{ .URL | absLangURL }}" {{- if eq $menu_item_url $page_url }} class="is-active"{{- end }}>
+                        <span>{{ $label }}</span>
+                    </a>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+    </div>
+</header>

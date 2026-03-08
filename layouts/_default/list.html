@@ -24,7 +24,8 @@
 
 {{- $pages := union .RegularPages .Sections }}
 {{- if .IsHome }}
-{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $mainSections := site.Params.mainSections | default (slice "posts") }}
+{{- $pages = where site.RegularPages "Type" "in" $mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
 {{- end }}
 {{- $paginator := .Paginate $pages }}

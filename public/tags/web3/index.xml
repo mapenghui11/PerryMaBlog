@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Web3 on PerryMa&#39;s Blog</title>
-    <link>/tags/web3/</link>
+    <link>//localhost:1313/tags/web3/</link>
     <description>Recent content in Web3 on PerryMa&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 24 Jan 2024 14:00:00 +0800</lastBuildDate>
-    <atom:link href="/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/web3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World - 我的第一篇博客</title>
-      <link>/posts/hello-world/</link>
+      <link>//localhost:1313/posts/hello-world/</link>
       <pubDate>Wed, 24 Jan 2024 14:00:00 +0800</pubDate>
-      <guid>/posts/hello-world/</guid>
+      <guid>//localhost:1313/posts/hello-world/</guid>
       <description>欢迎来到我的博客，这是第一篇文章</description>
     </item>
   </channel>
